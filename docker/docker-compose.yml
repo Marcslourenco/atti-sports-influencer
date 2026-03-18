@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  sports-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8100:8100"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - ATTI_LLM_ENDPOINT=${ATTI_LLM_ENDPOINT:-http://host.docker.internal:8000}
+      - ATTI_RAG_ENDPOINT=${ATTI_RAG_ENDPOINT:-http://host.docker.internal:8001}
+      - ENVIRONMENT=production
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ../agents:/app/agents
+      - ../config:/app/config
+      - ../data:/app/data
+
+volumes:
+  redis_data:

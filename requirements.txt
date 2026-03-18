@@ -1,0 +1,43 @@
+# ATTI Sports Influencer - Dependencies
+# Core
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Async
+asyncio-mqtt>=0.16.0
+aiohttp>=3.9.0
+aiofiles>=23.2.0
+
+# Message Broker
+redis>=5.0.0
+
+# Data Processing
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Sports Data
+feedparser>=6.0.0
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+httpx>=0.25.0
+
+# NLP / Content
+langdetect>=1.0.9
+
+# RAG (ATTI compatible)
+faiss-cpu>=1.7.4
+
+# Scheduling
+apscheduler>=3.10.0
+
+# Logging
+loguru>=0.7.0
+
+# YAML configs
+pyyaml>=6.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0

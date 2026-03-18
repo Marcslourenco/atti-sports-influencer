@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-03-15T14:18:40.207551",
+  "passed": 20,
+  "failed": 1,
+  "warnings": 2,
+  "details": [
+    "  ✅ PASS: LLM is adapter (not reimplemented) — Uses Modal.com Nemotron via adapter",
+    "  ✅ PASS: RAG is adapter (not reimplemented) — Uses FAISS 384d via adapter",
+    "  ✅ PASS: Persona is adapter (not reimplemented) — Uses PersonaEngine via adapter",
+    "  ✅ PASS: Worker is adapter (not reimplemented) — Uses digital-worker-platform via adapter",
+    "  ✅ PASS: Agent Registry initialization — Loaded 3 agents",
+    "  ❌ FAIL: Load agents from YAML — Loaded 0 agents",
+    "  ⚠️ WARN: Agent config validation — No agents to validate",
+    "  ✅ PASS: Redis broker configured — Ready for message queue",
+    "  ✅ PASS: Worker pool initialization — Worker pool configured",
+    "  ✅ PASS: Worker pool is stateless — Each worker loads config per task",
+    "  ✅ PASS: Agent Matcher initialization",
+    "  ✅ PASS: Match agents by event — Matcher configured with registry",
+    "  ✅ PASS: Match agents by domain — Domain matching ready",
+    "  ✅ PASS: Media pipeline initialization — Status: healthy",
+    "  ✅ PASS: TTS engine available — pyttsx3 ready for speech generation",
+    "  ✅ PASS: Avatar engine available — FFmpeg status: available",
+    "  ✅ PASS: Social orchestrator initialization — All publishers configured",
+    "  ✅ PASS: Telegram publisher configured",
+    "  ✅ PASS: Instagram publisher configured",
+    "  ✅ PASS: n8n webhook configured",
+    "  ✅ PASS: Event engine initialization — 1 adapters configured",
+    "  ✅ PASS: Polling modes configured — 5 modes: idle, pre_match, live, critical",
+    "  ⚠️ WARN: E2E pipeline — No agents in registry"
+  ]
+}
